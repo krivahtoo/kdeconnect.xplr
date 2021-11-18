@@ -1,13 +1,12 @@
-xplr plugin template
-====================
+> Warning: Work in progress
 
-Use this template to [write your own xplr plugin](https://arijitbasu.in/xplr/en/writing-plugins.html).
+Share files via kdeconnect in xplr
 
 
 Requirements
 ------------
 
-- Some tool
+- [kdeconnect](https://kdeconnect.kde.org/)
 
 
 Installation
@@ -26,26 +25,21 @@ Installation
   ```bash
   mkdir -p ~/.config/xplr/plugins
 
-  git clone https://github.com/me/{plugin}.xplr ~/.config/xplr/plugins/{plugin}
+  git clone https://github.com/krivahtoo/kdeconnect.xplr ~/.config/xplr/plugins/kdeconnect
   ```
 
 - Require the module in `~/.config/xplr/init.lua`
 
   ```lua
-  require("{plugin}").setup()
+  require("kdeconnect").setup()
   
   -- Or
   
-  require("{plugin}").setup{
-    mode = "action",
-    key = ":",
+  require("kdeconnect").setup{
+    mode = "selection_ops",
+    key = "K",
   }
 
-  -- Type `::` and enjoy.
+  -- Select files and type `:sK` to share
   ```
 
-
-Features
---------
-
-- Some cool feature
